@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengumuman Kelulusan MTs Al Hidayatul Islamiyah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-image: url('https://www.pixelstalk.net/wp-content/uploads/images5/Cool-Blue-Aesthetic-Background.jpg'); /*  */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .countdown-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <div class="container mx-auto p-4 min-h-screen flex flex-col items-center justify-center">
+
+        <header class="text-center my-6 md:my-8">
+            <img src="https://alhidayatulislamiyah.my.id/assets/images/logo.png" alt="Logo MTs Al Hidayatul Islamiyah" class="mx-auto mb-4 rounded-full shadow-lg border-4 border-white">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-green-700 drop-shadow-md">Pengumuman Kelulusan Siswa</h1>
+            <h2 class="text-xl sm:text-2xl md:text-3xl text-green-600 drop-shadow-sm">MTs Al Hidayatul Islamiyah Kuala Tungkal</h2>
+            <p class="text-gray-700 mt-2 text-lg">Tahun Pelajaran 2024/2025</p>
+        </header>
+
+        <section id="countdownSection" class="w-full max-w-3xl text-center p-6 md:p-8 rounded-xl shadow-2xl mb-8 card">
+            <h3 class="text-2xl md:text-3xl font-semibold text-green-700 mb-6">Pengumuman Akan Dibuka Dalam:</h3>
+            <div id="countdownTimer" class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-white">
+                <div class="countdown-item p-4 rounded-lg shadow-md">
+                    <div id="days" class="text-4xl md:text-5xl font-bold text-green-600">00</div>
+                    <div class="text-sm text-green-700">Hari</div>
+                </div>
+                <div class="countdown-item p-4 rounded-lg shadow-md">
+                    <div id="hours" class="text-4xl md:text-5xl font-bold text-green-600">00</div>
+                    <div class="text-sm text-green-700">Jam</div>
+                </div>
+                <div class="countdown-item p-4 rounded-lg shadow-md">
+                    <div id="minutes" class="text-4xl md:text-5xl font-bold text-green-600">00</div>
+                    <div class="text-sm text-green-700">Menit</div>
+                </div>
+                <div class="countdown-item p-4 rounded-lg shadow-md">
+                    <div id="seconds" class="text-4xl md:text-5xl font-bold text-green-600">00</div>
+                    <div class="text-sm text-green-700">Detik</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="announcementSection" class="w-full max-w-2xl p-6 md:p-8 rounded-xl shadow-2xl mb-8 card" style="display:none;">
+            <h3 class="text-2xl md:text-3xl font-semibold text-green-700 mb-6 text-center">Cek Status Kelulusan Anda</h3>
+            <form id="cekKelulusanForm" class="space-y-6">
+                <div>
+                    <label for="nisn" class="block text-sm font-medium text-gray-700 mb-1">Nomor Induk Siswa Nasional (NISN)</label>
+                    <input type="text" id="nisn" name="nisn" required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 transition duration-150 ease-in-out"
+                           placeholder="Masukkan NISN Anda">
+                </div>
+                <button type="submit"
+                        class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition duration-150 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                    Cek Kelulusan
+                </button>
+            </form>
+            <div id="resultArea" class="mt-8">
+                </div>
+        </section>
+
+        <section id="headmasterMessageSection" class="w-full max-w-3xl p-6 md:p-8 rounded-xl shadow-2xl mb-8 card">
+            <h3 class="text-2xl font-semibold text-green-700 mb-4 text-center">Pesan Kepala Madrasah</h3>
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+                <img src="https://alhidayatulislamiyah.my.id/assets/images/logo.png" alt="Foto Kepala Madrasah" class="w-32 h-40 md:w-40 md:h-auto object-cover rounded-lg shadow-md border-2 border-green-200">
+                <div class="text-gray-700 text-justify">
+                    <p class="mb-3">Assalamu'alaikum Warahmatullahi Wabarakatuh,</p>
+                    <p class="mb-3">Puji syukur kehadirat Allah SWT atas segala limpahan rahmat dan karunia-Nya. Hari ini merupakan momen penting bagi anak-anakku sekalian, para siswa-siswi MTs Al Hidayatul Islamiyah Kuala Tungkal.</p>
+                    <p class="mb-3">Selamat kepada seluruh siswa yang dinyatakan <strong>LULUS</strong>. Ini adalah buah dari kerja keras, doa, dan dukungan dari orang tua serta guru. Jadikan kelulusan ini sebagai langkah awal untuk meraih cita-cita yang lebih tinggi. Teruslah belajar dan berprestasi.</p>
+                    <p class="mb-3">Bagi yang belum berhasil, jangan berkecil hati. Kegagalan adalah guru terbaik. Teruslah berusaha, perbaiki diri, dan jangan pernah menyerah. Pintu kesuksesan selalu terbuka bagi mereka yang gigih.</p>
+                    <p class="font-semibold text-red-600">Saya menghimbau kepada seluruh siswa, khususnya yang lulus, untuk merayakan kelulusan ini dengan cara yang baik, penuh rasa syukur, dan tidak berlebihan. Hindari kegiatan konvoi di jalanan atau perayaan lain yang dapat mengganggu ketertiban umum serta membahayakan diri sendiri dan orang lain.</p>
+                    <p class="mt-3">Semoga Allah SWT senantiasa meridhoi setiap langkah kita. Wassalamu'alaikum Warahmatullahi Wabarakatuh.</p>
+                    <p class="mt-4 font-semibold">Kepala MTs Al Hidayatul Islamiyah</p>
+                    <p class="italic">(Aceng Muhammad Rum Masdaudi, S. Pd. I)</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center py-6 text-gray-200">
+            &copy; <span id="currentYear"></span> MTs Al Hidayatul Islamiyah Kuala Tungkal. Hak Cipta Dilindungi.
+        </footer>
+    </div>
+
+    <script>
+        // Data Siswa (Sebaiknya data ini diambil dari server-side untuk keamanan)
+        const studentData = [
+            { nisn: "0107790237", nama: "AIDA KUMALA", status: "LULUS", nilaiRataRata: 77 },
+            { nisn: "0108683996", nama: "ALMAGHFIRAH ADITIA NAJ", status: "LULUS", nilaiRataRata: 77 },
+            { nisn: "0106176243", nama: "ANIS MARHAMAH", status: "LULUS", nilaiRataRata: 76 },
+            { nisn: "0102568146", nama: "ANNISA AULIA", status: "LULUS", nilaiRataRata: 74 },
+            { nisn: "0101784179", nama: "ASMA AZZAHRA", status: "LULUS", nilaiRataRata: 74 },
+            { nisn: "0103794402", nama: "AULIA HAFIZAH", status: "LULUS", nilaiRataRata: 77 },
+            { nisn: "0105042157", nama: "AYUNDA PUTRI", status: "LULUS", nilaiRataRata: 75 },
+            { nisn: "0106247395", nama: "DEWANTY RAMADANI", status: "LULUS", nilaiRataRata: 74 },
+            { nisn: "0092404484", nama: "FEBBY REFALINA", status: "LULUS", nilaiRataRata: 77 },
+            { nisn: "0109022687", nama: "FITRI AULIA SALSABILA", status: "LULUS", nilaiRataRata: 69 },
+            { nisn: "0093414278", nama: "FITRI YANNA", status: "LULUS", nilaiRataRata: 73 },
+            { nisn: "0102612960", nama: "GITA KHAIRUNISA", status: "LULUS", nilaiRataRata: 78 },
+            { nisn: "0097655349", nama: "HATIYAH", status: "LULUS", nilaiRataRata: 79 },
+            { nisn: "0101665191", nama: "IZZATUL WAFIRAH", status: "LULUS", nilaiRataRata: 78 },
+            { nisn: "0102542727", nama: "JIHAN KHALISHAH ADIRLY", status: "LULUS", nilaiRataRata: 76 },
+            { nisn: "0091937912", nama: "KEYSHA NAILA SUTRISNO", status: "LULUS", nilaiRataRata: 78 },
+            { nisn: "0108323167", nama: "KHAIRUNNISA", status: "LULUS", nilaiRataRata: 76 },
+            { nisn: "0099544330", nama: "MAHMUDAH", status: "LULUS", nilaiRataRata: 69 },
+            { nisn: "0105429150", nama: "MAULINA RAHMAH", status: "LULUS", nilaiRataRata: 76 },
+            { nisn: "0093944354", nama: "MAWADDATUSSHUFI", status: "LULUS", nilaiRataRata: 78 },
+            { nisn: "0102455804", nama: "MESI AULIA", status: "LULUS", nilaiRataRata: 74 },
+            { nisn: "0107498303", nama: "MUNAWARAH", status: "LULUS", nilaiRataRata: 71 },
+            { nisn: "3099494828", nama: "NAFIZA MAHABATUZ ZAHWA", status: "LULUS", nilaiRataRata: 72 },
+            { nisn: "3112046103", nama: "NAJWA SALSABILA", status: "LULUS", nilaiRataRata: 74 },
+            { nisn: "0098289692", nama: "NASIA", status: "LULUS", nilaiRataRata: 76 },
+            { nisn: "0096738478", nama: "NUR AULIA", status: "LULUS", nilaiRataRata: 76 },
+            { nisn: "0101104340", nama: "NUR ELISA PUTRI", status: "LULUS", nilaiRataRata: 80 },
+            { nisn: "0101541349", nama: "NUR HIKMAH", status: "TIDAK LULUS", nilaiRataRata: 41 },
+            { nisn: "0094478405", nama: "NUR MUTMAINNAH", status: "LULUS", nilaiRataRata: 78 },
+            { nisn: "0107658340", nama: "NUR SAFIRA", status: "LULUS", nilaiRataRata: 73 },
+            { nisn: "0109976573", nama: "NUR SHAFA AL ZAHRA", status: "LULUS", nilaiRataRata: 75 },
+            { nisn: "0103497701", nama: "QARINA TUVI JANNAH", status: "LULUS", nilaiRataRata: 76 },
+            { nisn: "3104756073", nama: "RIA INTAN GUSTINA", status: "LULUS", nilaiRataRata: 76 },
+            { nisn: "0099247973", nama: "RINNY RUSNAINI", status: "LULUS", nilaiRataRata: 71 },
+            { nisn: "0083011139", nama: "RISKA PADILA", status: "LULUS", nilaiRataRata: 76 },
+            { nisn: "3100082075", nama: "SALSABILA NATASYA", status: "LULUS", nilaiRataRata: 79 },
+            { nisn: "0102685208", nama: "SINTA SAVITRI", status: "LULUS", nilaiRataRata: 78 },
+            { nisn: "0107943188", nama: "SITI NURHALIZA", status: "LULUS", nilaiRataRata: 75 },
+            { nisn: "0096546114", nama: "SITI RAHMA SARI", status: "LULUS", nilaiRataRata: 77 },
+            { nisn: "0092286286", nama: "SUCI AULIA SARI", status: "LULUS", nilaiRataRata: 74 },
+            { nisn: "0108472755", nama: "SUCI RAMADANI", status: "LULUS", nilaiRataRata: 77 },
+            { nisn: "3099095807", nama: "SYIFA GALBINA", status: "LULUS", nilaiRataRata: 77 },
+            { nisn: "0101887995", nama: "UMAIRAH NURUSSYIFA", status: "LULUS", nilaiRataRata: 75 },
+            { nisn: "0091410615", nama: "VALENTINA", status: "LULUS", nilaiRataRata: 73 },
+            { nisn: "0107129252", nama: "ZAN JABILA", status: "LULUS", nilaiRataRata: 80 },
+            { nisn: "0099325110", nama: "ABDUL AFIF", status: "LULUS", nilaiRataRata: 73 },
+            { nisn: "0082838787", nama: "AHMAD BADAWI", status: "LULUS", nilaiRataRata: 73 },
+            { nisn: "0104287599", nama: "AHMAD FADHILLAH AKBAR", status: "LULUS", nilaiRataRata: 76 },
+            { nisn: "0103147212", nama: "AHMAD FAUZAN", status: "LULUS", nilaiRataRata: 74 },
+            { nisn: "0105593223", nama: "AHMAD NASIHIN HABIBILLAH", status: "LULUS", nilaiRataRata: 76 },
+            { nisn: "0106898613", nama: "AHMAD RAFIQI", status: "LULUS", nilaiRataRata: 77 },
+            { nisn: "0081038238", nama: "ALDI PIRANSA", status: "TIDAK LULUS", nilaiRataRata: 57 },
+            { nisn: "0107341613", nama: "ARSAD", status: "TIDAK LULUS", nilaiRataRata: 47 },
+            { nisn: "0125221666", nama: "DAFFA MUHAMMAD ILYAS", status: "LULUS", nilaiRataRata: 78 },
+            { nisn: "0106980599", nama: "DIMAS ABDI DARMA", status: "LULUS", nilaiRataRata: 75 },
+            { nisn: "0106438396", nama: "DYKA SAPUTRA", status: "LULUS", nilaiRataRata: 74 },
+            { nisn: "0105505709", nama: "FACHRI ILHAM", status: "LULUS", nilaiRataRata: 74 },
+            { nisn: "3106872408", nama: "HABIBURRAHMAN ASRARI", status: "LULUS", nilaiRataRata: 79 },
+            { nisn: "0105308561", nama: "HARITS AS SYAFA", status: "LULUS", nilaiRataRata: 72 },
+            { nisn: "0103613941", nama: "IBNU SABIL", status: "LULUS", nilaiRataRata: 74 },
+            { nisn: "0092898432", nama: "IKMAL MAULANA", status: "LULUS", nilaiRataRata: 73 },
+            { nisn: "3106070092", nama: "KHIRUL NAZMI", status: "LULUS", nilaiRataRata: 74 },
+            { nisn: "0094043890", nama: "M. AHMAD GOJALI", status: "LULUS", nilaiRataRata: 73 },
+            { nisn: "0105956089", nama: "M. ALIEF ALFARIZI", status: "LULUS", nilaiRataRata: 72 },
+            { nisn: "0098635675", nama: "M. AS'AD BAIHAKI", status: "LULUS", nilaiRataRata: 75 },
+            { nisn: "0103063824", nama: "M. AZKA AL AZKIYA", status: "LULUS", nilaiRataRata: 77 },
+            { nisn: "0092415095", nama: "M. FAHMI RAMADHAN", status: "LULUS", nilaiRataRata: 81 },
+            { nisn: "0102001601", nama: "M. FERDIANSYAH", status: "LULUS", nilaiRataRata: 75 },
+            { nisn: "0099280698", nama: "M. IBNU GIPARY ALFARABI", status: "LULUS", nilaiRataRata: 73 },
+            { nisn: "0098697247", nama: "M. IKHSAN HIDAYATULLAH", status: "LULUS", nilaiRataRata: 75 },
+            { nisn: "0104634270", nama: "M. ILYASSIN", status: "LULUS", nilaiRataRata: 77 },
+            { nisn: "0107387496", nama: "M. IN'AM ATTAQIY", status: "LULUS", nilaiRataRata: 75 },
+            { nisn: "0096973189", nama: "M. NASIHUL UMAM", status: "LULUS", nilaiRataRata: 73 },
+            { nisn: "0088415501", nama: "M. NAYANSYAH", status: "LULUS", nilaiRataRata: 74 },
+            { nisn: "0104778324", nama: "M. NUR DHIA ULAMI", status: "LULUS", nilaiRataRata: 77 },
+            { nisn: "0103411759", nama: "M. RAFI AMANSYAH", status: "LULUS", nilaiRataRata: 75 },
+            { nisn: "0094347402", nama: "M. RIDHO RIZKI AKBAR", status: "LULUS", nilaiRataRata: 75 },
+            { nisn: "0094498726", nama: "M. RIDO DWI ANDIKA", status: "LULUS", nilaiRataRata: 75 },
+            { nisn: "3102885675", nama: "M. ZAKI AL-FADHILY", status: "LULUS", nilaiRataRata: 73 },
+            { nisn: "0095589516", nama: "MIKO DEDY WIJAYA", status: "LULUS", nilaiRataRata: 73 },
+            { nisn: "0096548422", nama: "MUHAMMAD ADHA AL-KAUTSAR", status: "LULUS", nilaiRataRata: 79 },
+            { nisn: "0098093426", nama: "MUHAMMAD ADITYA", status: "LULUS", nilaiRataRata: 74 },
+            { nisn: "0108594539", nama: "MUHAMMAD AUFA MAROM", status: "LULUS", nilaiRataRata: 75 },
+            { nisn: "0092799924", nama: "MUHAMMAD DZIKRA HAQIQI", status: "LULUS", nilaiRataRata: 76 },
+            { nisn: "0108833731", nama: "MUHAMMAD FAKHRUDIN", status: "LULUS", nilaiRataRata: 74 },
+            { nisn: "0101236685", nama: "MUHAMMAD FIKRI RAMADHAN", status: "LULUS", nilaiRataRata: 75 },
+            { nisn: "0093813611", nama: "MUHAMMAD ILYAN ROSYADA", status: "LULUS", nilaiRataRata: 73 },
+            { nisn: "0086451787", nama: "MUHAMMAD JUHAILI", status: "LULUS", nilaiRataRata: 76 },
+            { nisn: "0103508526", nama: "MUHAMMAD KHAIRUN NIZAM", status: "LULUS", nilaiRataRata: 81 },
+            { nisn: "0104776774", nama: "MUHAMMAD MAJIED ATQA", status: "LULUS", nilaiRataRata: 77 },
+            { nisn: "0094261324", nama: "MUHAMMAD NURDIANSYAH", status: "LULUS", nilaiRataRata: 73 },
+            { nisn: "0096644236", nama: "MUHAMMAD PAHRI", status: "LULUS", nilaiRataRata: 72 },
+            { nisn: "0101957587", nama: "MUHAMMAD RAIHAN", status: "LULUS", nilaiRataRata: 76 },
+            { nisn: "0106266912", nama: "MUHAMMAD RAYHAN", status: "LULUS", nilaiRataRata: 73 },
+            { nisn: "0106544440", nama: "MUSHAWWIR", status: "LULUS", nilaiRataRata: 73 },
+            { nisn: "0095996968", nama: "REYSAL SEPTIANSYAH", status: "LULUS", nilaiRataRata: 76 }
+        ];
+
+        // Target Tanggal Pengumuman: 2 Juni 2025, 17:00 WIB (GMT+7)
+        const targetDate = new Date("2025-06-02T17:00:00+07:00").getTime();
+        let countdownInterval;
+
+        const countdownSection = document.getElementById('countdownSection');
+        const announcementSection = document.getElementById('announcementSection');
+        const cekKelulusanForm = document.getElementById('cekKelulusanForm');
+        const resultArea = document.getElementById('resultArea');
+        const nisnInput = document.getElementById('nisn');
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeLeft = targetDate - now;
+
+            if (timeLeft <= 0) {
+                clearInterval(countdownInterval);
+                countdownSection.style.display = 'none';
+                announcementSection.style.display = 'block';
+                document.getElementById('countdownTimer').innerHTML = '<p class="col-span-full text-2xl text-green-600 font-semibold">Waktu Pengumuman Telah Tiba!</p>';
+                return;
+            }
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        cekKelulusanForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const nisn = nisnInput.value.trim();
+            resultArea.innerHTML = ''; // Clear previous results
+
+            if (!nisn) {
+                resultArea.innerHTML = `<p class="text-center text-red-600 font-semibold p-4 bg-red-100 rounded-lg">Silakan masukkan NISN Anda.</p>`;
+                return;
+            }
+
+            const student = studentData.find(s => s.nisn === nisn);
+
+            if (student) {
+                let resultHTML = `
+                    <div class="p-6 border rounded-lg shadow-lg ${student.status === 'LULUS' ? 'bg-green-50 border-green-300' : 'bg-red-50 border-red-300'}">
+                        <h4 class="text-xl font-semibold mb-2 ${student.status === 'LULUS' ? 'text-green-700' : 'text-red-700'}">Hasil Kelulusan:</h4>
+                        <p><strong>Nama:</strong> ${student.nama}</p>
+                        <p><strong>NISN:</strong> ${student.nisn}</p>
+                        <p><strong>Nilai Rata-rata:</strong> ${student.nilaiRataRata}</p>
+                        <p class="mt-2"><strong>Status:</strong> 
+                            <span class="font-bold ${student.status === 'LULUS' ? 'text-green-600' : 'text-red-600'}">${student.status}</span>
+                        </p>`;
+
+                if (student.status === 'LULUS') {
+                    resultHTML += `
+                        <div class="mt-4 p-4 bg-green-100 rounded-md">
+                            <p class="text-green-700 font-semibold text-lg">🎉 Selamat! Anda dinyatakan LULUS! 🎉</p>
+                            <p class="text-green-600 mt-1">Semoga sukses selalu menyertai langkah Anda ke jenjang pendidikan berikutnya. Teruslah berprestasi dan menjadi kebanggaan keluarga serta almamater.</p>
+                        </div>`;
+                } else {
+                    resultHTML += `
+                        <div class="mt-4 p-4 bg-red-100 rounded-md">
+                            <p class="text-red-700 font-semibold text-lg">Tetap Semangat!</p>
+                            <p class="text-red-600 mt-1">Kegagalan adalah awal dari kesuksesan sejati. Jangan menyerah dan teruslah berusaha dengan lebih giat. Masih banyak jalan dan kesempatan untuk meraih cita-cita Anda. Percayalah pada diri sendiri!</p>
+                        </div>`;
+                }
+                resultHTML += `</div>`;
+                resultArea.innerHTML = resultHTML;
+            } else {
+                resultArea.innerHTML = `<p class="text-center text-red-600 font-semibold p-4 bg-red-100 rounded-lg">NISN tidak ditemukan. Pastikan NISN yang Anda masukkan benar.</p>`;
+            }
+        });
+
+        // Initial Check
+        const now = new Date().getTime();
+        if (targetDate - now <= 0) {
+            // Jika waktu sudah lewat
+            countdownSection.style.display = 'none';
+            announcementSection.style.display = 'block';
+        } else {
+            // Jika waktu belum tiba
+            countdownSection.style.display = 'block';
+            announcementSection.style.display = 'none';
+            countdownInterval = setInterval(updateCountdown, 1000);
+            updateCountdown(); // Panggil sekali di awal
+        }
+
+        // Update tahun di footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
